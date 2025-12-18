@@ -1,0 +1,40 @@
+name: Run Cypress Tests
+
+on:
+    push:
+       branches:
+           - practice
+           
+    pull_request:
+        branches:
+          - practice
+
+jobs:
+    cypress-run:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v4
+
+            - name: Setup node.js
+              uses: actions/setup-node@v4
+              with:
+                node-version: 20  
+
+            - name: Run Cypress Tests
+              uses: cypress-io/github-action@v6 
+             
+            - name: Upload Screenshots (if any)
+              if: always()
+              uses: actions/upload-artifact@v4
+              with:
+                name: cypress-screenshots
+                path: cypress/screenshots
+
+            - name: Upload Videos (if any)
+              if: always()
+              uses: actions/upload-artifact@v4
+              with:
+                name: cypress-videos
+                path: cypress/videos
