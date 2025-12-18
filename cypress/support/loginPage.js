@@ -1,7 +1,10 @@
 class LogIn{
     visit()
     {
-        cy.visit('https://the-internet.herokuapp.com/login')
+        cy.visit('https://the-internet.herokuapp.com/login', {
+            timeout: 120000,
+            waitUntil: 'domcontentloaded'
+        })
     }
     enterUsername(name)
     {

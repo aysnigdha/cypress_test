@@ -2,15 +2,23 @@
   "name": "cypress_2",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "cypress.config.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aysnigdha/cypress_test.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
-  "devDependencies": {
+  "bugs": {
+    "url": "https://github.com/aysnigdha/cypress_test/issues"
+  },
+  "homepage": "https://github.com/aysnigdha/cypress_test#readme",
+  "dependencies": {
     "cypress": "^15.8.0"
   }
 }

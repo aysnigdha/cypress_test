@@ -6,5 +6,6 @@ describe('unsuccessful login with wrong credential',()=> {
       LogIn.enterPassword('SuperSecretPassword!');
       LogIn.clickLogin();
       cy.get('#flash').contains('Your username is invalid!').should('be.visible');
+      cy.reload()
     })
 })
